@@ -125,6 +125,11 @@ class XTouchCompact {
         rangeB: [104, 109], type: BUTTONS_TRANSPORT, midi: NOTE
       }
     ]
+    this.midiIn.setMidiCallback(this.onMidi)
+  }
+
+  onMidi(type, index, value) {
+
   }
 
   actionValueRange = [0,12]
@@ -143,22 +148,15 @@ class XTouchCompact {
 
   getType = (status, data1) => this.mainInterface.find(({ rangeA, rangeB, midi }) =>
     status === midi && (inRange(data1, rangeA) || inRange(data1, rangeB))).type
-
 }
-
 
 let transport
 let hardware
 function init() {
   hardware = new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
   transport = host.createTransport()
-  host.getMidiInPort(0).setMidiCallback(onMidi)
-
-  // TODO: Perform further initialization here.
-  println('aubrey-xtouch-compact initialized!')
 }
 
-// Called when a short MIDI message is received on MIDI input port 0.
 function onMidi(status, data1, data2) {
   // TODO: Implement your MIDI input handling code here.
 }
