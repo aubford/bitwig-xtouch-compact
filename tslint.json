@@ -1,0 +1,9 @@
+{
+  "linterOptions": {
+    "exclude": ["node_modules/**/*"]
+  },
+  "rules": {
+    "adjacent-overload-signatures": true,
+    "semicolon": false
+  }
+}

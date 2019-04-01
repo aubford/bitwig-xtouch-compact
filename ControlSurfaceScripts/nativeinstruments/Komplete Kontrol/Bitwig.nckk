@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ni-controller-midi-map port="internal" version="1">
+
+  <midi-map name="Bitwig" type="KompleteKontrol">
+    <wrapmode>0</wrapmode>
+    <controls>
+      <button id="ButtonArp">
+        <disabled/>
+        <controller>46</controller>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">toggle</behavior>
+        <reaction>ondown</reaction>
+      </button>
+      <button id="ButtonKeys">
+        <disabled/>
+        <controller>45</controller>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">toggle</behavior>
+        <reaction>ondown</reaction>
+      </button>
+      <button id="ButtonTstLeft">
+        <note>0</note>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">gate</behavior>
+        <reaction>ondown</reaction>
+      </button>
+      <button id="ButtonTstRight">
+        <note>1</note>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">gate</behavior>
+        <reaction>ondown</reaction>
+      </button>
+      <footswitch id="FSwRing">
+        <controller>65</controller>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">gate</behavior>
+        <reaction>ondown</reaction>
+      </footswitch>
+      <footswitch id="FSwTip">
+        <controller>64</controller>
+        <channel>0</channel>
+        <off>0</off>
+        <on>127</on>
+        <behavior onIfDown="on">gate</behavior>
+        <reaction>ondown</reaction>
+      </footswitch>
+      <pedal id="Pedal">
+        <controller>11</controller>
+        <channel>0</channel>
+        <min>0</min>
+        <max>127</max>
+        <default>0</default>
+      </pedal>
+      <touchstrip id="TouchstripTstLeft">
+        <range>360</range>
+        <steps>20</steps>
+        <TouchstripMode>1</TouchstripMode>
+        <TouchstripWalls>1</TouchstripWalls>
+        <TouchstripGravity>13</TouchstripGravity>
+        <TouchstripFriction>6</TouchstripFriction>
+        <TouchstripSpringStrength>3</TouchstripSpringStrength>
+        <TouchstripLedMode>0</TouchstripLedMode>
+        <TouchstripSteps>3</TouchstripSteps>
+        <TouchstripDisplay>1</TouchstripDisplay>
+        <pitchbend/>
+        <channel>0</channel>
+        <min>0</min>
+        <max>16383</max>
+        <default>8192</default>
+      </touchstrip>
+      <touchstrip id="TouchstripTstRight">
+        <range>360</range>
+        <steps>20</steps>
+        <TouchstripMode>0</TouchstripMode>
+        <TouchstripWalls>1</TouchstripWalls>
+        <TouchstripGravity>13</TouchstripGravity>
+        <TouchstripFriction>6</TouchstripFriction>
+        <TouchstripSpringStrength>3</TouchstripSpringStrength>
+        <TouchstripLedMode>0</TouchstripLedMode>
+        <TouchstripSteps>3</TouchstripSteps>
+        <TouchstripDisplay>0</TouchstripDisplay>
+        <controller>1</controller>
+        <channel>0</channel>
+        <min>0</min>
+        <max>127</max>
+        <default>0</default>
+      </touchstrip>
+    </controls>
+    <KnobsPages>
+      <current_index>0</current_index>
+      <KnobsPage name="Bitwig">
+        <knob id="EndlessKnob1">
+          <name>Value</name>
+          <controller mode="comp">14</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob2">
+          <name>Value</name>
+          <controller mode="comp">15</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob3">
+          <name>Value</name>
+          <controller mode="comp">16</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob4">
+          <name>Value</name>
+          <controller mode="comp">17</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob5">
+          <name>Value</name>
+          <controller mode="comp">18</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob6">
+          <name>Value</name>
+          <controller mode="comp">19</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob7">
+          <name>Value</name>
+          <controller mode="comp">20</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+        <knob id="EndlessKnob8">
+          <name>Value</name>
+          <controller mode="comp">21</controller>
+          <channel>0</channel>
+          <min>0</min>
+          <max>127</max>
+          <default>0</default>
+          <range>360</range>
+          <steps>20</steps>
+          <bipolar>off</bipolar>
+        </knob>
+      </KnobsPage>
+    </KnobsPages>
+    <KeyZones>
+      <KeyZone id="Key Zone 1">
+        <lowerKey>0</lowerKey>
+        <upperKey>127</upperKey>
+        <velocityCurve>3</velocityCurve>
+        <transpose>0</transpose>
+        <color-index>1</color-index>
+        <channel>0</channel>
+        <ledMode>3</ledMode>
+      </KeyZone>
+    </KeyZones>
+  </midi-map>
+
+</ni-controller-midi-map>

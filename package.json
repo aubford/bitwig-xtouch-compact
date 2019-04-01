@@ -1,0 +1,16 @@
+{
+  "name": "aubrey-xtouch-compact",
+  "version": "1.0.0",
+  "description": "Behringer X-Touch Compact Bitwig Control Script",
+  "main": "aubrey-xtouch-compact.control.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.14.0",
+    "typed-bitwig-api": "^6.0.0",
+    "typescript": "^3.4.1"
+  }
+}
