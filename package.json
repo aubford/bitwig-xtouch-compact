@@ -4,11 +4,13 @@
   "description": "Behringer X-Touch Compact Bitwig Control Script",
   "main": "aubrey-xtouch-compact.control.ts",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "compile": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "prettier": "^1.17.0",
     "tslint": "^5.14.0",
     "typed-bitwig-api": "^6.0.0",
     "typescript": "^3.4.1"

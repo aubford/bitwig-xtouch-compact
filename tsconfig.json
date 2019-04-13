@@ -6,7 +6,8 @@
     ],
     "noUnusedLocals": true,
     "moduleResolution": "node",
-    "outFile": "/Users/aubreyford/Documents/Bitwig Studio/Controller Scripts",
+    "outFile": "/Users/aubreyford/Documents/Bitwig Studio/Controller Scripts/aubrey-xtouch-compact/aubrey-xtouch-compact.control.js",
+    "importHelpers": true,
     "types": [
       "typed-bitwig-api"
     ]
