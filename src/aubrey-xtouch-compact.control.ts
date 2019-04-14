@@ -57,14 +57,14 @@ class UserControls {
   constructor(rangeStart, rangeEnd) {
     this.rangeStart = rangeStart
     this.rangeEnd = rangeEnd
-    this.controls = host.createUserControls(rangeEnd - rangeStart)
+    this.controls = host.createUserControls(1 + rangeEnd - rangeStart)
   }
 
   getRange = () => [this.rangeStart, this.rangeEnd]
 
   getUserControlIndex = (controlKey: number) => {
     if (controlKey >= this.rangeStart && controlKey <= this.rangeEnd) {
-      return this.rangeEnd - controlKey
+      return controlKey - this.rangeStart
     }
     return null
   }

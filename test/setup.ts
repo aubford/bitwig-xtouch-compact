@@ -3,12 +3,12 @@ class UserControlsTest {
   constructor(num) {
     this.controls = []
     let i = 0
-    while (i++ < num) {
+    do {
       this.controls.push({
         testName: i,
         set: jest.fn()
       })
-    }
+    } while (num >= i++)
   }
 
   getControl = (index: number) => this.controls[index]

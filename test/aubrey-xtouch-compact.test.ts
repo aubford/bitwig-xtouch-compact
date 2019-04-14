@@ -13,9 +13,16 @@ describe('XTouchCompact', () => {
     expect(sideEncoder.type).toBe(SIDE_ENCODERS)
   })
 
-  test('getUserControls', () => {
+  test('getUserControls first index', () => {
     userControl = xtouch.getUserControl(MidiType.CC, 18)
     expect(userControl.testName).toBe(0)
+    xtouch.setParameter(userControl, 50)
+    expect(userControl.set).toHaveBeenCalledWith(50,128)
+  })
+
+  test('getUserControls last index', () => {
+    userControl = xtouch.getUserControl(MidiType.CC, 25)
+    expect(userControl.testName).toBe(7)
     xtouch.setParameter(userControl, 50)
     expect(userControl.set).toHaveBeenCalledWith(50,128)
   })
