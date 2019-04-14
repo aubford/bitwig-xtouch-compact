@@ -11,7 +11,7 @@
     "noEmit": true,
 //    "importHelpers": true,
     "types": [
-      "../typed-bitwig-api-aubrey",
+      "../bitwig-api-aubrey",
       "node",
       "@types/prettier",
       "@types/jest"

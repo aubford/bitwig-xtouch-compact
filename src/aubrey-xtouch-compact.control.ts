@@ -48,7 +48,7 @@ interface MainInterface {
   midiType: MidiType
 }
 
-const inRange = (val, range) => range[0] <= val <= range[1]
+const inRange = (val, range) => range[0] <= val && val <= range[1]
 
 class UserControls {
   rangeStart: number
@@ -59,6 +59,8 @@ class UserControls {
     this.rangeEnd = rangeEnd
     this.controls = host.createUserControls(rangeEnd - rangeStart)
   }
+
+  getRange = () => [this.rangeStart, this.rangeEnd]
 
   getUserControlIndex = (controlKey: number) => {
     if (controlKey >= this.rangeStart && controlKey <= this.rangeEnd) {
@@ -250,7 +252,8 @@ export class XTouchCompact {
     this.mainInterface.find(
       ({ controlsA, controlsB, midiType }) =>
         midiStatus === midiType &&
-        (inRange(controlKey, controlsA) || inRange(controlKey, controlsB))
+        (inRange(controlKey, controlsA.getRange()) ||
+          inRange(controlKey, controlsB.getRange()))
     )
 
   onMidi = (midiStatus: MidiType, controlKey: number, controlValue: number) => {
