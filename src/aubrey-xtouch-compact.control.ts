@@ -53,16 +53,18 @@ const inRange = (val, range) => range[0] <= val && val <= range[1]
 class UserControls {
   rangeStart: number
   rangeEnd: number
+  numControls: number
   controls: API.UserControlBank
   constructor(rangeStart, rangeEnd) {
     this.rangeStart = rangeStart
     this.rangeEnd = rangeEnd
-    this.controls = host.createUserControls(1 + rangeEnd - rangeStart)
+    this.numControls = 1 + rangeEnd - rangeStart
+    this.controls = host.createUserControls(this.numControls)
   }
 
   getRange = () => [this.rangeStart, this.rangeEnd]
 
-  getUserControlIndex = (controlKey: number) => {
+  getUserControlIndexFromControlKey = (controlKey: number) => {
     if (controlKey >= this.rangeStart && controlKey <= this.rangeEnd) {
       return controlKey - this.rangeStart
     }
@@ -70,11 +72,18 @@ class UserControls {
   }
 
   getUserControl = (controlKey: number) => {
-    const controlIndex = this.getUserControlIndex(controlKey)
+    const controlIndex = this.getUserControlIndexFromControlKey(controlKey)
     if (controlIndex !== null) {
       return this.controls.getControl(controlIndex)
     }
     return false
+  }
+
+  getControlAtIndex = (controlIndex: number) => {
+    if (controlIndex > this.numControls - 1 || controlIndex < 0) {
+      throw new Error('UserControls.getControlAtIndex: Not in range')
+    }
+    return this.controls.getControl(controlIndex)
   }
 }
 

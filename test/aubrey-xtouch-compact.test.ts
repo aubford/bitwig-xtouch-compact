@@ -1,5 +1,5 @@
 // import './setup.ts'
-import { XTouchCompact, SIDE_ENCODERS, MidiType } from '../src/aubrey-xtouch-compact.control'
+import { MidiType, SIDE_ENCODERS, XTouchCompact } from '../src/aubrey-xtouch-compact.control'
 
 let xtouch = new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
 let userControl
@@ -25,5 +25,11 @@ describe('XTouchCompact', () => {
     expect(userControl.testName).toBe(7)
     xtouch.setParameter(userControl, 50)
     expect(userControl.set).toHaveBeenCalledWith(50,128)
+  })
+
+  test('onMidi', () => {
+    xtouch.onMidi(MidiType.NOTE, 54, 128)
+    const ctrl = xtouch.mainInterface[10].controlsA.getControlAtIndex(5)
+    expect(ctrl.set).toHaveBeenCalledWith(128, 128)
   })
 })
