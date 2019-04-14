@@ -12,7 +12,7 @@
     "outFile": "/Users/aubreyford/Documents/Bitwig Studio/Controller Scripts/aubrey/aubrey.control.js",
 //    "importHelpers": true,
     "types": [
-      "typed-bitwig-api",
+      "../bitwig-api-aubrey",
       "@types/prettier",
       "node"
     ],

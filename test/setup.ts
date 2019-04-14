@@ -1,6 +1,7 @@
-
-// interface UserControlBank {
-//   getControl(index: number): any
+// namespace API {
+//   interface UserControlBank {
+//     testName: number
+//   }
 // }
 
 class UserControls {
@@ -19,13 +20,13 @@ class UserControls {
   getControl = (index: number) => this.controls[index]
 }
 
-const loadAPI = (num) => {}
+var loadAPI = (num) => {}
 
-const host = {
-  getMidiInPort: () => ({
-    setMidiCallBack: jest.fn()
+var host = {
+  getMidiInPort: num => ({
+    setMidiCallback: jest.fn()
   }),
-  getMidiOutPort: () => ({
+  getMidiOutPort: num => ({
     sendMidi: jest.fn()
   }),
   defineController: jest.fn(),
@@ -37,4 +38,3 @@ const host = {
 
 global['host'] = host
 global['loadAPI'] = loadAPI
-global['API'] = API

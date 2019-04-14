@@ -1,15 +1,15 @@
 // import './setup.ts'
 import { XTouchCompact, SIDE_ENCODERS, MidiType } from '../src/aubrey-xtouch-compact.control'
 
-let xtouch = new XTouchCompact(host.getMidiInPort(), host.getMidiOutPort())
+let xtouch = new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
 let userControl
 describe('XTouchCompact', () => {
   beforeAll(() => {
-    xtouch = new XTouchCompact(host.getMidiInPort(), host.getMidiOutPort())
+    xtouch = new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
   })
 
   test('getInterfaceElement', () => {
-    const sideEncoder = xtouch.getUserControl(MidiType.CC, 18)
+    const sideEncoder = xtouch.getInterfaceElement(MidiType.CC, 18)
     expect(sideEncoder.type).toBe(SIDE_ENCODERS)
   })
 

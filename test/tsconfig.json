@@ -11,11 +11,12 @@
     "noEmit": true,
 //    "importHelpers": true,
     "types": [
+      "../typed-bitwig-api-aubrey",
       "node",
       "@types/prettier",
       "@types/jest"
     ],
-    "esModuleInterop": true
+//    "esModuleInterop": true
   },
   "compileOnSave": false
 }
