@@ -19,19 +19,19 @@ export enum MidiType {
   CC = 0xb0
 }
 
-const TRACK_ENCODERS = 'TRACK_ENCODERS'
-const TRACK_ENCODERS_PUSH = 'TRACK_ENCODERS_PUSH'
+export const TRACK_ENCODERS = 'TRACK_ENCODERS'
+export const TRACK_ENCODERS_PUSH = 'TRACK_ENCODERS_PUSH'
 export const SIDE_ENCODERS = 'SIDE_ENCODERS'
-const SIDE_ENCODERS_PUSH = 'SIDE_ENCODERS_PUSH'
-const FADER = 'FADER'
-const FADER_TOUCH = 'FADER_TOUCH'
-const BUTTONS_FADER = 'BUTTONS_FADER'
-const BUTTONS1 = 'BUTTONSA'
-const BUTTONS2 = 'BUTTONSB'
-const BUTTONS3 = 'BUTTONSC'
-const BUTTONS_TRANSPORT = 'BUTTONS_TRANSPORT'
-const FOOT_SW_LED = 'FOOT_SW_LED'
-const FOOT_EXP_LED = 'FOOT_EXP_LED'
+export const SIDE_ENCODERS_PUSH = 'SIDE_ENCODERS_PUSH'
+export const FADER = 'FADER'
+export const FADER_TOUCH = 'FADER_TOUCH'
+export const BUTTONS_FADER = 'BUTTONS_FADER'
+export const BUTTONS1 = 'BUTTONSA'
+export const BUTTONS2 = 'BUTTONSB'
+export const BUTTONS3 = 'BUTTONSC'
+export const BUTTONS_TRANSPORT = 'BUTTONS_TRANSPORT'
+export const FOOT_SW_LED = 'FOOT_SW_LED'
+export const FOOT_EXP_LED = 'FOOT_EXP_LED'
 
 type Range = [number, number]
 type RxActions = { [x: string]: number }

@@ -6,8 +6,8 @@
       "es6"
     ],
 //    "noUnusedLocals": true,
-    "module": "amd",
-    "sourceMap": true,
+    "module": "commonjs",
+//    "sourceMap": true,
     "moduleResolution": "node",
     "outFile": "/Users/aubreyford/Documents/Bitwig Studio/Controller Scripts/aubrey/aubrey.control.js",
 //    "importHelpers": true,
