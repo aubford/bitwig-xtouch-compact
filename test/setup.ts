@@ -1,10 +1,4 @@
-// namespace API {
-//   interface UserControlBank {
-//     testName: number
-//   }
-// }
-
-class UserControls {
+class UserControlsTest {
   controls
   constructor(num) {
     this.controls = []
@@ -31,7 +25,7 @@ var host = {
   }),
   defineController: jest.fn(),
   defineMidiPorts: jest.fn(),
-  createUserControls: num => new UserControls(num),
+  createUserControls: num => new UserControlsTest(num),
   setShouldFailOnDeprecatedUse(value: boolean): any {},
   addDeviceNameBasedDiscoveryPair(inputs: string[], outputs: string[]): any {}
 }
