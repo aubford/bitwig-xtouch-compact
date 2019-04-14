@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es7",
+      "es6"
+    ],
+//    "noUnusedLocals": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+//    "importHelpers": true,
+    "types": [
+      "node",
+      "@types/prettier",
+      "@types/jest"
+    ],
+    "esModuleInterop": true
+  },
+  "compileOnSave": false
+}

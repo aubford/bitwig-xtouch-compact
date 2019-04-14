@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es7",
+      "es6"
+    ],
+//    "noUnusedLocals": true,
+    "module": "amd",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outFile": "/Users/aubreyford/Documents/Bitwig Studio/Controller Scripts/aubrey/aubrey.control.js",
+//    "importHelpers": true,
+    "types": [
+      "typed-bitwig-api",
+      "@types/prettier",
+      "node"
+    ],
+    "watch": true,
+    "noEmitOnError": true
+  },
+  "compileOnSave": true
+}
