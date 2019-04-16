@@ -2,10 +2,10 @@
   "name": "aubrey-xtouch-compact",
   "version": "1.0.0",
   "description": "Behringer X-Touch Compact Bitwig Control Script",
-  "main": "src/aubrey-xtouch-compact.control.ts",
+  "main": "src/xtouch-compact/entryPoint.ts",
   "scripts": {
     "test": "jest",
-    "compile": "tsc"
+    "compile": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +13,12 @@
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.4",
     "@types/prettier": "^1.16.1",
+    "awesome-typescript-loader": "^5.2.1",
     "jest": "^24.7.1",
     "prettier": "^1.17.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.1"
+    "typescript": "^3.4.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
   }
 }

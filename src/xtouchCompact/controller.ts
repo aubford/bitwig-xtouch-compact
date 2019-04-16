@@ -1,23 +1,4 @@
-loadAPI(8)
-// Remove this if you want to be able to use deprecated methods without causing script to stop.
-// This is useful during development.
-host.setShouldFailOnDeprecatedUse(true)
-
-host.defineController(
-  'aubrey',
-  'aubrey',
-  '0.1',
-  'dd95a53b-7d47-4cc3-aaaa-1d5aaa896f54',
-  'aubrey'
-)
-host.defineMidiPorts(1, 1)
-host.addDeviceNameBasedDiscoveryPair(['X-TOUCH COMPACT'], ['X-TOUCH COMPACT'])
-
-export enum MidiType {
-  NOTE = 0x90,
-  NOTE_OFF = 0x80,
-  CC = 0xb0
-}
+import { inRange, MainInterface, RxInterface, Range, UserControls, MidiType } from '../framework'
 
 export const TRACK_ENCODERS = 'TRACK_ENCODERS'
 export const TRACK_ENCODERS_PUSH = 'TRACK_ENCODERS_PUSH'
@@ -33,61 +14,7 @@ export const BUTTONS_TRANSPORT = 'BUTTONS_TRANSPORT'
 export const FOOT_SW_LED = 'FOOT_SW_LED'
 export const FOOT_EXP_LED = 'FOOT_EXP_LED'
 
-type Range = [number, number]
-type RxActions = { [x: string]: number }
-interface RxInterface {
-  type: string
-  range: Range
-  midiType: MidiType
-  actions?: RxActions
-}
-interface MainInterface {
-  controlsA: UserControls
-  controlsB: UserControls
-  type: string
-  midiType: MidiType
-}
-
-const inRange = (val, range) => range[0] <= val && val <= range[1]
-
-class UserControls {
-  rangeStart: number
-  rangeEnd: number
-  numControls: number
-  controls: API.UserControlBank
-  constructor(rangeStart, rangeEnd) {
-    this.rangeStart = rangeStart
-    this.rangeEnd = rangeEnd
-    this.numControls = 1 + rangeEnd - rangeStart
-    this.controls = host.createUserControls(this.numControls)
-  }
-
-  getRange = () => [this.rangeStart, this.rangeEnd]
-
-  getUserControlIndexFromControlKey = (controlKey: number) => {
-    if (controlKey >= this.rangeStart && controlKey <= this.rangeEnd) {
-      return controlKey - this.rangeStart
-    }
-    return null
-  }
-
-  getUserControl = (controlKey: number) => {
-    const controlIndex = this.getUserControlIndexFromControlKey(controlKey)
-    if (controlIndex !== null) {
-      return this.controls.getControl(controlIndex)
-    }
-    return false
-  }
-
-  getControlAtIndex = (controlIndex: number) => {
-    if (controlIndex > this.numControls - 1 || controlIndex < 0) {
-      throw new Error('UserControls.getControlAtIndex: Not in range')
-    }
-    return this.controls.getControl(controlIndex)
-  }
-}
-
-export class XTouchCompact {
+export class Controller {
   mainInterface: MainInterface[]
   rxInterface: RxInterface[]
   midiIn: API.MidiIn
@@ -296,13 +223,3 @@ export class XTouchCompact {
     )
   }
 }
-
-function init() {
-  new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
-}
-
-function flush() {
-  // TODO: Flush any output to your controller here.
-}
-
-function exit() {}

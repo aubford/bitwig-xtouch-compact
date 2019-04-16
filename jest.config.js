@@ -1,13 +1,10 @@
 module.exports = {
   testPathIgnorePatterns: [
-    "/.idea/"
-  ],
-  roots: [
-    "<rootDir>/src",
-    "<rootDir>/test"
+    "./.idea/",
+    "./ControlSurfaceScripts"
   ],
   transform: {
-    "^.+\.ts$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest"
   },
   preset: "ts-jest",
   moduleFileExtensions: [
@@ -16,10 +13,10 @@ module.exports = {
     "js",
     "node"
   ],
-  setupFiles: ['./test/setup.ts'],
-  globals: {
-    'ts-jest': {
-      tsConfig: './test/tsconfig.json'
-    }
-  }
+  setupFiles: ['./test-setup.ts'],
+  //globals: {
+  //  'ts-jest': {
+  //    tsConfig: './tsconfig.json'
+  //  }
+  //}
 }

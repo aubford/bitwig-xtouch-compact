@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es7",
+      "es6"
+    ],
+//    "noUnusedLocals": true,
+    "types": [
+      "node",
+      "@types/jest",
+      "./src/bitwig-api"
+    ],
+    "noEmit": true
+  },
+  "exclude": ["node_modules"],
+  "files": [
+    "./src/framework.ts"
+  ]
+}

@@ -1,5 +1,5 @@
-// import './setup.ts'
-import { MidiType, SIDE_ENCODERS, XTouchCompact } from '../src/aubrey-xtouch-compact.control'
+import XTouchCompact, { SIDE_ENCODERS } from './controller'
+import { MidiType } from '../framework'
 
 let xtouch = new XTouchCompact(host.getMidiInPort(0), host.getMidiOutPort(0))
 let userControl

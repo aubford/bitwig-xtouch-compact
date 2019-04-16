@@ -14,21 +14,12 @@ class UserControlsTest {
   getControl = (index: number) => this.controls[index]
 }
 
-var loadAPI = (num) => {}
-
-var host = {
+global['host'] = {
   getMidiInPort: num => ({
     setMidiCallback: jest.fn()
   }),
   getMidiOutPort: num => ({
     sendMidi: jest.fn()
   }),
-  defineController: jest.fn(),
-  defineMidiPorts: jest.fn(),
-  createUserControls: num => new UserControlsTest(num),
-  setShouldFailOnDeprecatedUse(value: boolean): any {},
-  addDeviceNameBasedDiscoveryPair(inputs: string[], outputs: string[]): any {}
+  createUserControls: num => new UserControlsTest(num)
 }
-
-global['host'] = host
-global['loadAPI'] = loadAPI
