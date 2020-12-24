@@ -14,7 +14,7 @@ export const BUTTONS_TRANSPORT = 'BUTTONS_TRANSPORT'
 export const FOOT_SW_LED = 'FOOT_SW_LED'
 export const FOOT_EXP_LED = 'FOOT_EXP_LED'
 
-export class Controller {
+export default class Controller {
   mainInterface: MainInterface[]
   rxInterface: RxInterface[]
   midiIn: API.MidiIn
@@ -184,13 +184,14 @@ export class Controller {
     parameter.set(value, 128)
   }
 
-  getInterfaceElement = (midiStatus: MidiType, controlKey: number) =>
-    this.mainInterface.find(
+  getInterfaceElement = (midiStatus: MidiType, controlKey: number) => {
+    return this.mainInterface.find(
       ({ controlsA, controlsB, midiType }) =>
         midiStatus === midiType &&
         (inRange(controlKey, controlsA.getRange()) ||
           inRange(controlKey, controlsB.getRange()))
     )
+  }
 
   onMidi = (midiStatus: MidiType, controlKey: number, controlValue: number) => {
     this.setParameter(this.getUserControl(midiStatus, controlKey), controlValue)

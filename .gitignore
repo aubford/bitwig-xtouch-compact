@@ -1,3 +1,7 @@
 .iml*
 node_modules
 .DS_Store
+dist
+workspace.xml
+usage.statistics.xml
+tasks.xml
